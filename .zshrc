@@ -59,7 +59,10 @@ ZSH_THEME="robbyrussell"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
+  rails
+  ruby
   git
+  vi
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -77,6 +80,7 @@ source $ZSH/oh-my-zsh.sh
 # else
 #   export EDITOR='mvim'
 # fi
+mkdir -p ~/.vim/undo
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -97,19 +101,17 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-
-git config --global user.name "mercuryt"
-git config --global user.email "alexcgilliland@gmail.com"
-
-
 # Virtualenvwrapper things
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/Devel
 source ~/.local/bin/virtualenvwrapper.sh
 
 # swap capslock with escape
-setxkbmap -option "caps:noescape"
+setxkbmap -option "caps:swapescape"
 
+
+git config --global user.name "mercuryt"
+git config --global user.email "alexcgilliland@gmail.com"
 
 # cache git logins for 1 hour
 git config --global credential.helper 'cache --timeout=3600'
