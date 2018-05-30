@@ -80,6 +80,7 @@ source $ZSH/oh-my-zsh.sh
 # else
 #   export EDITOR='mvim'
 # fi
+# ensure existance of vim undo dir
 mkdir -p ~/.vim/undo
 
 # Compilation flags

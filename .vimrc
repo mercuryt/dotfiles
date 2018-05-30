@@ -32,6 +32,9 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 Plugin 'tell-k/vim-autopep8'
 autocmd FileType python noremap <buffer> <F8> :call Autopep8()<CR> 
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'w0rp/ale' " asyncronus lint engine
+Plugin 'rking/ag.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
