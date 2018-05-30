@@ -41,7 +41,10 @@ colorscheme zenburn
 let python_highlight_all=1
 syntax on
 set nu
+set ic " ignore case in search
+set hls is "real time search hiligt
 set autoindent
+set nocp
 filetype plugin indent on
 
 " 2 spaces always

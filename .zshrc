@@ -107,10 +107,14 @@ export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/Devel
 source ~/.local/bin/virtualenvwrapper.sh
 
+# swap capslock with escape
+setxkbmap -option "caps:noescape"
+
 
 # cache git logins for 1 hour
 git config --global credential.helper 'cache --timeout=3600'
+  
+#dotfile config alias
+# https://developer.atlassian.com/blog/2016/02/best-way-to-store-dotfiles-git-bare-repo/
 
-
-# swap caps and escape
-/usr/bin/setxkbmap -option "caps:swapescape"
+alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
