@@ -121,3 +121,4 @@ git config --global credential.helper 'cache --timeout=3600'
 # https://developer.atlassian.com/blog/2016/02/best-way-to-store-dotfiles-git-bare-repo/
 
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+alias factorio='~/Games/factorio/bin/x64/factorio'

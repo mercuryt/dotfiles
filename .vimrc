@@ -1,6 +1,5 @@
 set nocompatible              " required
-filetype off                  " required
-
+filetype off                  " required 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -27,6 +26,7 @@ Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-endwise'
 Plugin 'tpope/vim-commentary'
+Plugin 'tpope/vim-haml'
 Plugin 'kien/ctrlp.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
@@ -34,6 +34,7 @@ Plugin 'tell-k/vim-autopep8'
 autocmd FileType python noremap <buffer> <F8> :call Autopep8()<CR> 
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'w0rp/ale' " asyncronus lint engine
+let g:ale_echo_cursor = 0 " ale hides the cursor on lines with errors??
 Plugin 'rking/ag.vim'
 
 " All of your Plugins must be added before the following line
@@ -41,7 +42,6 @@ call vundle#end()            " required
 filetype plugin indent on    " required
 
 colorscheme zenburn
-let python_highlight_all=1
 syntax on
 set nu
 set ic " ignore case in search
@@ -97,6 +97,7 @@ au BufNewFile,BufRead *.py
     \ set expandtab
     \ set autoindent
     \ set fileformat=unix
+    \ let python_highlight_all=1
 
 au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 set encoding=utf-8
