@@ -108,9 +108,9 @@ export PROJECT_HOME=$HOME/Devel
 source ~/.local/bin/virtualenvwrapper.sh
 
 # swap capslock with escape
-setxkbmap -option "caps:swapescape"
+#setxkbmap -option "caps:swapescape"
 
-
+#git config
 git config --global user.name "mercuryt"
 git config --global user.email "alexcgilliland@gmail.com"
 
