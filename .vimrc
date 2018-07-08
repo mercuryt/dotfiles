@@ -35,6 +35,7 @@ Plugin 'kchmck/vim-coffee-script'
 Plugin 'w0rp/ale' " asyncronus lint engine
 let g:ale_echo_cursor = 0 " ale hides the cursor on lines with errors??
 Plugin 'rking/ag.vim'
+
 Plugin 'ctrlpvim/ctrlp.vim'
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
@@ -48,6 +49,10 @@ let g:ctrlp_custom_ignore = {
   \ }
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard'] " ignore everythin in git ignore
 
+" easytags
+Plugin 'xolox/vim-misc'
+Plugin 'xolox/vim-easytags'
+
 
 
 " All of your Plugins must be added before the following line
@@ -60,6 +65,7 @@ set nu
 set ic " ignore case in search
 set hls is "real time search hiligt
 set autoindent
+set smartindent "?
 set nocp
 filetype plugin indent on
 
@@ -151,3 +157,18 @@ function! AutoHighlightToggle()
 endfunction
 
 "call AutoHighlightToggle()
+
+" grep for current word
+au BufNewFile,BufRead *.rb
+    \ nnoremap f/ :vimgrep <cword> **/*.rb <cr>
+" silver searcher
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
+
+" wild menu
+" http://vimdoc.sourceforge.net/htmldoc/options.html#'wildmenu'
+set wildmenu
+set wildignore=.git,.node_modules
+set wildmode=full
+
