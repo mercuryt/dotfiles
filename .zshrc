@@ -63,6 +63,7 @@ plugins=(
   ruby
   git
   vi
+  heroku
 )
 
 source $ZSH/oh-my-zsh.sh
