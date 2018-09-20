@@ -124,3 +124,8 @@ git config --global credential.helper 'cache --timeout=3600'
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 alias factorio='~/Games/factorio/bin/x64/factorio'
 alias wxGui='cd ~/Code/HVAC_Lint/wxGui && workon wkGui'
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
+
+source ~/.profilerc
