@@ -17,6 +17,9 @@ Plugin 'vim-scripts/indentpython.vim'
 Bundle 'Valloric/YouCompleteMe'
 let g:ycm_autoclose_preview_window_after_completion=1
 map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
+"Plugin 'shougo/deoplete.nvim'
+" Use deoplete.
+"let g:deoplete#enable_at_startup = 1
 Plugin 'jnurmine/Zenburn'
 Plugin 'tmhedberg/SimpylFold'
 Plugin 'vim-syntastic/syntastic'
@@ -169,6 +172,6 @@ endif
 " wild menu
 " http://vimdoc.sourceforge.net/htmldoc/options.html#'wildmenu'
 set wildmenu
-set wildignore=.git,.node_modules
+set wildignore+=.git,.node_modules,*/tmp/*,*.so,*.swp,*.zip
 set wildmode=full
 
