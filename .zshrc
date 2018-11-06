@@ -59,6 +59,7 @@ ZSH_THEME="robbyrussell"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
+  rvm
   rails
   ruby
   git
@@ -104,9 +105,9 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # Virtualenvwrapper things
-export WORKON_HOME=$HOME/.virtualenvs
-export PROJECT_HOME=$HOME/Devel
-source ~/.local/bin/virtualenvwrapper.sh
+#export WORKON_HOME=$HOME/.virtualenvs
+#export PROJECT_HOME=$HOME/Devel
+#source ~/.local/bin/virtualenvwrapper.sh
 
 # swap capslock with escape
 #setxkbmap -option "caps:swapescape"
@@ -125,7 +126,12 @@ alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 alias factorio='~/Games/factorio/bin/x64/factorio'
 alias wxGui='cd ~/Code/HVAC_Lint/wxGui && workon wkGui'
 
+source ~/.profilerc
+
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
 
-source ~/.profilerc
+# set default ruby version, requires login shell?
+rvm use 2.6 --default
+
+alias work='cd ~/Code/sherrill_engineering/cx-data && /bin/bash --login -c "rvm use default && rails s"  & xdotool key ctrl+shift+t && /bin/bash --login -c "rvm use default && rails c" & xdotool key ctrl+shift+t && vi'
