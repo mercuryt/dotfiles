@@ -1,3 +1,4 @@
+let mapleader = "\<Space>"
 set nocompatible              " required
 filetype off                  " required 
 " set the runtime path to include Vundle and initialize
@@ -13,6 +14,10 @@ Plugin 'gmarik/Vundle.vim'
 " add all your plugins here (note older versions of Vundle
 " used Bundle instead of Plugin)
 
+Plugin 'easymotion/vim-easymotion'
+
+
+
 Plugin 'vim-scripts/indentpython.vim'
 Bundle 'Valloric/YouCompleteMe'
 let g:ycm_autoclose_preview_window_after_completion=1
@@ -23,7 +28,7 @@ map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 Plugin 'jnurmine/Zenburn'
 Plugin 'tmhedberg/SimpylFold'
 Plugin 'vim-syntastic/syntastic'
-Plugin 'nvie/vim-flake8'
+Plugin 'nvie/vim-flake8' " python auto format
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-surround'
@@ -56,7 +61,8 @@ let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standar
 Plugin 'xolox/vim-misc'
 Plugin 'xolox/vim-easytags'
 
-
+"Plugin 'rust-lang/rust.vim'
+"Plugin 'wilsaj/chuck.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -112,7 +118,7 @@ set foldmethod=indent
 set foldlevel=99
 
 " Enable folding with the spacebar
-nnoremap <space> za
+"nnoremap <space> za
 
 au BufNewFile,BufRead *.py
     \ set textwidth=79
@@ -163,7 +169,7 @@ endfunction
 
 " grep for current word
 au BufNewFile,BufRead *.rb
-    \ nnoremap f/ :vimgrep <cword> **/*.rb <cr>
+    \ nnoremap f/ :vimgrep <cword> **/* <cr>
 " silver searcher
 if executable('ag')
   let g:ackprg = 'ag --vimgrep'
