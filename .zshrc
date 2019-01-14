@@ -59,12 +59,13 @@ ZSH_THEME="robbyrussell"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-  rvm
+  #rvm #https://rvm.io/integration/zsh
   rails
-  ruby
+  #ruby
   git
   vi
   heroku
+  rust
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -105,9 +106,12 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # Virtualenvwrapper things
-#export WORKON_HOME=$HOME/.virtualenvs
-#export PROJECT_HOME=$HOME/Devel
-#source ~/.local/bin/virtualenvwrapper.sh
+export WORKON_HOME=$HOME/.virtualenvs
+export PROJECT_HOME=$HOME/Code
+export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
+export VIRTUALENVWRAPPER_VIRTUALENV=/usr/local/bin/virtualenvwrapper.sh
+# export VIRTUALENVWRAPPER_VIRTUALENV_ARGS='--no-site-packages'
+source /usr/local/bin/virtualenvwrapper.sh
 
 # swap capslock with escape
 #setxkbmap -option "caps:swapescape"
@@ -132,6 +136,7 @@ source ~/.profilerc
 export PATH="$PATH:$HOME/.rvm/bin"
 
 # set default ruby version, requires login shell?
-rvm use 2.6 --default
+#/bin/bash --login -c 'rvm use default'
 
-alias work='cd ~/Code/sherrill_engineering/cx-data && /bin/bash --login -c "rvm use default && rails s"  & xdotool key ctrl+shift+t && /bin/bash --login -c "rvm use default && rails c" & xdotool key ctrl+shift+t && vi'
+alias work='. ~/work.sh'
+alias cargo='~/.cargo/bin/cargo'
